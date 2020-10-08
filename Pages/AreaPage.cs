@@ -7,9 +7,9 @@ namespace PreciseUnitConversionTests.Pages
 {
     internal class AreaPage
     {
-        AndroidElement navigation => _driver.FindElementByAccessibilityId("Open navigation drawer");
-        AndroidElement convertedTextView => _driver.FindElementById("target_value");
-        private AppiumDriver<AndroidElement> _driver;
+        AndroidElement Navigation => _driver.FindElementByAccessibilityId("Open navigation drawer");
+        AndroidElement ConvertedTextView => _driver.FindElementById("target_value");
+        private readonly AppiumDriver<AndroidElement> _driver;
 
         public AreaPage(AppiumDriver<AndroidElement> driver)
         {
@@ -18,7 +18,7 @@ namespace PreciseUnitConversionTests.Pages
 
         public AreaPage GoToAreaPage()
         {
-            navigation.Click();
+            Navigation.Click();
             ScrollMenu.FindAndClickOnElement(_driver, "Area");
             return this;
         }
@@ -32,7 +32,7 @@ namespace PreciseUnitConversionTests.Pages
         public int GetConvertedValue()
         {
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            return Int32.Parse(convertedTextView.GetAttribute("text").Replace(" ", ""));
+            return Int32.Parse(ConvertedTextView.GetAttribute("text").Replace(" ", ""));
         }
     }
 }

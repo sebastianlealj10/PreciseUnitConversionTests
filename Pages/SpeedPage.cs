@@ -1,19 +1,16 @@
 ﻿using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Support.UI;
 using PreciseUnitConversionTests.Utils;
 using System;
-using System.Threading;
 
 namespace PreciseUnitConversionTests.Pages
 {
     class SpeedPage
     {
-        AndroidElement navigation => _driver.FindElementByAccessibilityId("Open navigation drawer");
-        AndroidElement fiveButton => _driver.FindElementByXPath("//*[contains(@class,'Button') and contains(@text,'5')]");
-        AndroidElement convertedTextView => _driver.FindElementById("target_value");
+        AndroidElement Navigation => _driver.FindElementByAccessibilityId("Open navigation drawer");
+        AndroidElement ConvertedTextView => _driver.FindElementById("target_value");
 
-        private AppiumDriver<AndroidElement> _driver;
+        private readonly AppiumDriver<AndroidElement> _driver;
 
         public SpeedPage(AppiumDriver<AndroidElement> driver)
         {
@@ -22,7 +19,7 @@ namespace PreciseUnitConversionTests.Pages
 
         public SpeedPage GoToAreaPage()
         {
-            navigation.Click();
+            Navigation.Click();
             ScrollMenu.FindAndClickOnElement(_driver, "Speed");
             return this;
         }
@@ -36,7 +33,7 @@ namespace PreciseUnitConversionTests.Pages
         public int GetConvertedValue()
         {
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
-            return Int32.Parse(convertedTextView.GetAttribute("text").Replace(".", ""));
+            return Int32.Parse(ConvertedTextView.GetAttribute("text").Replace(".", ""));
         }
     }
 }
