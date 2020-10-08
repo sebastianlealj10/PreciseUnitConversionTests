@@ -9,6 +9,7 @@ namespace PreciseUnitConversionTests.Pages
     {
         AndroidElement Navigation => _driver.FindElementByAccessibilityId("Open navigation drawer");
         AndroidElement ConvertedTextView => _driver.FindElementById("target_value");
+
         private readonly AppiumDriver<AndroidElement> _driver;
 
         public AreaPage(AppiumDriver<AndroidElement> driver)
