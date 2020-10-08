@@ -15,7 +15,7 @@ Automate two test cases:
 - **Language**: C# .Net Framework 4.7
 - **API to communicate with the APK**: Appium
 - **Logic abstraction**: Page Object Model
-- **Test Runner**: MS test
+- **Test Runner**: MSTest
 
 ## Technical debt:
 
