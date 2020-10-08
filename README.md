@@ -24,3 +24,4 @@ Automate two test cases:
 * Use ThreadLocal or another strategy to execute the tests in parallel
 * Start the virtual device automatly with the execution
 * Add a new helper to handle the filters for each convertion
+* Add a logger and reports
