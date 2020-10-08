@@ -47,5 +47,11 @@ namespace PreciseUnitConversionTests.Tests
                 .GetConvertedValue();
             Assert.AreEqual(128748, convertedValue);
         }
+
+        [ClassCleanup]
+        public static void TestCleanup()
+        {
+            _driver.CloseApp();
+        }
     }
 }
